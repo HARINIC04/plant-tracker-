@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌿 Plant Buddy Dashboard</title>
+  <style>
+    body {
+      margin: 10;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f8e9;
+      color: #33691e;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      padding: 50px;
+      text-align: center;
+      background-color: #aed581;
+      color: #1b5e20;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .dark-mode header {
+      background-color: #33691e;
+      color: #c5e1a5;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap:wrap;
+      gap: 20px;
+      padding: 50px;
+    }
+    .plant-card {
+      background: rgb(152, 226, 152);
+      width:auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      text-decoration:dashed;
+      color: #164105;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      padding: 20px;
+    }
+    .plant-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .plant-card img {
+      width: 400px;
+      height: 400px;
+      
+     
+      margin-bottom: 20px;
+      border-radius: 20px;
+      background-color: #e8f5e9;
+      padding: 10px;
+    }
+    .dark-mode .plant-card {
+      background: #2e7d32;
+      color: #c5e1a5;
+    }
+    .dark-mode .plant-card:hover {
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+      transform: translateY(-10px);
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #7cb342;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .dark-toggle:hover {
+      background-color: #558b2f;
+    }
+  </style>
+</head>
+<body>
+  <header>🌿 Plant Buddy Dashboard</header>
+
+  <button class="dark-toggle" id="darkToggle">🌙 Dark Mode</button>
+
+  <div class="container">
+    <a href="plant1.html" class="plant-card">
+      <img src="./cactus.jpg" alt="Cactus" />
+      <h3>Cactus</h3>
+    </a>
+    <a href="plant2.html" class="plant-card">
+      <img src="./money plant.jpg" alt="Money Plant" />
+      <h3>Money Plant</h3>
+    </a>
+    <a href="plant3.html" class="plant-card">
+      <img src="./Aloe vera.jpg" alt="Aloe Vera" />
+      <h3>Aloe Vera</h3>
+    </a>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = '☀️ Light Mode';
+      } else {
+        toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+</body>
+</html>

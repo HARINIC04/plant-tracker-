@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🪴 Aloe Vera Care</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fbe7;
+      padding: 30px;
+      text-align: center;
+      color: #33691e;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    h1 {
+      color:  #5d416d;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style:none;
+      padding: 0;
+      margin-top: 30px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    li {
+      background: #cb79d1;
+      margin: 12px 0;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.4);
+      accent-color: #8bc34a;
+    }
+    .back-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #4291b3;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .back-btn:hover {
+      background-color: #558b2f;
+    }
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #2e7d32;
+      color: #c5e1a5;
+    }
+    body.dark-mode li {
+      background: #001001;
+      box-shadow: 0 3px 8px rgba(255,255,255,0.2);
+      color: #e8f5e9;
+    }
+    body.dark-mode input[type="checkbox"] {
+      accent-color: #aed581;
+    }
+    body.dark-mode .back-btn {
+      background-color: #aed581;
+      color: #2e3a7d;
+    }
+    body.dark-mode .back-btn:hover {
+      background-color: #c5e1a5;
+    }
+     fieldset {
+      border:solid rgb(187, 61, 187);
+      padding: 10px;
+      margin: 20px;
+    }
+    legend {
+      font-weight:bolder;
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <fieldset><legend>🌿 Aloe Vera</legend>
+  <h1> Care To-Do</h1>
+  <a href="https://en.wikipedia.org/wiki/Aloe_vera">About Aloe vera</a>
+  <ul>
+    <li>
+      <span>💧 Water once every 10 days</span>
+      <input type="checkbox" />
+    </li>
+    <li>
+      <span>☀️ Keep in bright, indirect sunlight</span>
+      <input type="checkbox" />
+    </li>
+    <li>
+      <span>📦 Repot every 6 months</span>
+      <input type="checkbox" />
+    </li>
+  </ul>
+
+  
+  <form action="https://www.youtube.com/results">
+    <input type="text" name="search_query" id="" placeholder="search">
+    <button>Search in youtube</button>
+  </form>
+  </fieldset>
+  <a href="dashboard.html" class="back-btn">🔙 Back</a>
+  <script>
+    // Dark mode toggle synced with dashboard
+    // This code assumes you want consistent dark mode if user toggled on dashboard
+    // Store preference in localStorage
+    const body = document.body;
+
+    // On load, check localStorage for dark mode
+    if(localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+    }
+
+    // No toggle button here, but to sync with dashboard toggle:
+    // You can add a toggle button here if needed.
+
+    // Optional: Listen for storage event to sync dark mode changes between pages
+    window.addEventListener('storage', (e) => {
+      if(e.key === 'darkMode') {
+        if(e.newValue === 'enabled') {
+          body.classList.add('dark-mode');
+        } else {
+          body.classList.remove('dark-mode');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
